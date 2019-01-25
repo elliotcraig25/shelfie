@@ -5,17 +5,26 @@ import React, {Component} from 'react';
 import Product from '../Product/Product';
 
 class Dashboard extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-
+            inventoryFromApp: this.props.inventory
         }
     }
+
     render(){
+        const inventoryItems = this.state.inventoryFromApp.map((item)=>{
+            return (
+                <div className="parent-dash">
+                    <Product name={item.name} price={item.price} img={item.img}/>
+                </div>
+            )
+        }) 
         return(
-            <div>
-                <h1>Dashboard</h1>
-                <Product />
+            <div className="parent-dash-parent">
+                <div>
+                    {inventoryItems}
+                </div>
             </div>
         )
     }

@@ -33,8 +33,23 @@
     .form-image-div {
       height: 100px;
       width: 100px;
-      background-color: #282c34;
+      border: #282c34 solid 2px;
     }
+
+        .form-image-div-image {
+          max-height: 100%;
+          max-width: 100%;
+        }
+
+.parent-dash {
+  height: 200px;
+  width: 200px;
+  background-color: #61dafb;
+}
+
+.parent-dash-parent {
+  
+}
 
 @keyframes App-logo-spin {
   from {

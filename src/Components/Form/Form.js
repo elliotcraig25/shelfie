@@ -49,7 +49,7 @@ class Form extends Component {
             <div className="parent-form">
                 <div className="form-image">
                     <div className="form-image-div">
-
+                        <img className="form-image-div-image" src={this.state.imageUrlInput} alt="alt"/>
                     </div>
                 </div>
                 <div className="form-inputs">
