@@ -11,6 +11,11 @@ class Form extends Component {
             priceInput: ''
         }
     }
+  
+    postMethod(){
+        const {getMethod} = this.props
+        console.log(typeof getMethod)
+    }
 
     handleImageUrlInput(value){
         this.setState({
@@ -45,6 +50,8 @@ class Form extends Component {
     }
 
     render(){
+        const {getMethod} = this.props
+        console.log(getMethod)
         return(
             <div className="parent-form">
                 <div className="form-image">

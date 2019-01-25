@@ -31,23 +31,35 @@ class App extends Component {
         // }
     ],
     }
+    this.getMethod = this.getMethod.bind(this)
   }
   
+  getMethod(){
+    axios.get(`/api/inventory`)
+    .then((response)=>{
+      this.setState({
+        inventory: response.data
+      })
+      console.log(response.data)
+    })
+  }
+
   componentDidMount(){
     axios.get(`/api/inventory`)
     .then((response)=>{
       this.setState({
-        inventory: response.data 
+        inventory: response.data
       })
       console.log(response.data)
     })
   }
 
   render() {
+    console.log(this.state.inventory)  
     return (
       <div className="App">
         <Header />
-        <Form getInventory />
+        <Form getMethod={this.getMethod}/>
         <Dashboard inventory={this.state.inventory}/>
       </div>
     );
