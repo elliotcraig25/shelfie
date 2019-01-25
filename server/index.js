@@ -11,5 +11,7 @@ massive(process.env.CONNECTION_STRING).then((db)=>{
     app.set('db', db)
 }).catch((err)=>{console.log(err)})
 
-port = process.env.SERVER_PORT || 4000
-app.listen(port, ()=>{console.log(`listening on the port ${port}`)})
+app.get(`/api/inventory`, ctrl.getInvoList)
+
+serverPort = process.env.SERVER_PORT || 4000
+app.listen(serverPort, ()=>{console.log(`listening on the port ${serverPort}`)})

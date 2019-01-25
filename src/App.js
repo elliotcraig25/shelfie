@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 import Dashboard from './Components/Dashboard/Dashboard';
 import Form from './Components/Form/Form';
@@ -9,26 +10,22 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      inventory: [
-        {
-          name: 'shoe',
-          price: '5',
-          img: 'https://scene7.josbank.com/is/image/JosBank/20924_000_main'
-        },
-        {
-          name: 'cap',
-          price: '2.5',
-          img: 'https://kickz.akamaized.net/us/media/images/p/1200/champion-Baseball_Cap-NBK_NEW_BLACK-2.jpg'
-        },
-        {
-          name: 'sock',
-          price: '3',
-          img: 'https://www.wigwam.com/products/images/Product/large/F2020_1_.jpg'
-        },
-      ]
+      inventory: [],
     }
   }
+
+  componentDidMount(){
+    axios.get(`/api/inventory`)
+    .then((res)=>{
+      
+    })
+    this.setState({
+      inventory:
+    })
+  }
+
   render() {
+    console.log(this.state.inventory)
     return (
       <div className="App">
         <Header />
