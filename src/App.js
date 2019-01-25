@@ -59,8 +59,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Form getMethod={this.getMethod}/>
-        <Dashboard inventory={this.state.inventory}/>
+        <div className="the-form-and-the-dash">
+          <Dashboard inventory={this.state.inventory}/>
+          <Form getMethod={this.getMethod}/>
+        </div>
       </div>
     );
   }

@@ -66,7 +66,7 @@ class Form extends Component {
         return(
             <div className="parent-form">
                 <div className="form-image">
-                    <div className="form-image-div">
+                    <div className="form-image-div-b">
                         <img className="form-image-div-image" src={this.state.imageUrlInput} alt="alt"/>
                     </div>
                 </div>
