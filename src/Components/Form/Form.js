@@ -18,13 +18,14 @@ class Form extends Component {
         axios.post(`/api/product`, {name, price, img})
         .then((response)=>{
             console.log(response)
+            this.setState({
+                imageUrlInput: '',
+                productNameInput: '',
+                priceInput: ''
+            })
+            getMethod()
         })
-        getMethod()
-        this.setState({
-            imageUrlInput: '',
-            productNameInput: '',
-            priceInput: ''
-        })
+       
     }
 
     handleImageUrlInput(value){
