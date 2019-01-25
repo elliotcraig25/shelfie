@@ -6,7 +6,22 @@ class Form extends Component {
     render(){
         return(
             <div>
-                <h1>Form</h1>
+                <div className="form-image">
+                    <div className="form-image-div">
+
+                    </div>
+                </div>
+                <div className="form-inputs">
+                    <p>Image URL:</p>
+                    <input />
+                    <p>Product Name:</p>
+                    <input />
+                    <p>Price:</p>
+                    <input />
+                </div>
+                <div className="form-buttons">
+
+                </div>
             </div>
         )
     }
