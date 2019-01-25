@@ -11,6 +11,10 @@ const Products = function(props){
             <div>
                 <p>Name: {props.name}</p>
                 <p>Price: {props.price}</p>
+                <di>
+                    <button>delete</button>
+                    <button>edit</button>
+                </di>
             </div>
         </div>
         

@@ -15,7 +15,7 @@ class Dashboard extends Component {
     render(){
         const inventoryItems = this.props.inventory.map((item)=>{
             return (
-                <div className="parent-dash" key={item.product_id}>
+                <div className="parent-dash" key={item.product_id}> 
                     <Product name={item.name} price={item.price} img={item.img}/>
                 </div>
             )
