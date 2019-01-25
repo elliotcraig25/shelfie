@@ -6,5 +6,14 @@ module.exports = {
             res.sendStatus(500)
             console.log(err)
         })
+    },
+    postProduct: (req, res, next)=>{
+        const {name, price, img} = req.body
+        req.app.get('db').create_product([name, price, img])
+        .then(()=>res.sendStatus(200))
+        .catch(err=>{
+            res.sendStatus(500)
+            console.log(err)
+        })
     }
 } 
