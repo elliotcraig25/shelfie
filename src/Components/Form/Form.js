@@ -1,6 +1,7 @@
 //this is a class component 
 
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Form extends Component {
     constructor(){
@@ -12,9 +13,18 @@ class Form extends Component {
         }
     }
   
-    postMethod(){
+    postMethod(name, price, img){
         const {getMethod} = this.props
-        console.log(typeof getMethod)
+        axios.post(`/api/product`, {name, price, img})
+        .then((response)=>{
+            console.log(response)
+        })
+        getMethod()
+        this.setState({
+            imageUrlInput: '',
+            productNameInput: '',
+            priceInput: ''
+        })
     }
 
     handleImageUrlInput(value){
@@ -77,7 +87,9 @@ class Form extends Component {
                     <button onClick={()=>{
                         this.handleCancelClick()
                     }}>Cancel</button>
-                    <button>Add to inventory</button>
+                    <button onClick={()=>{
+                        this.postMethod(this.state.productNameInput, this.state.priceInput, this.state.imageUrlInput)
+                    }}>Add to inventory</button>
                 </div>
             </div>
         )
