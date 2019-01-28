@@ -25,7 +25,6 @@ class Form extends Component {
             })
             getMethod()
         })
-       
     }
 
     handleImageUrlInput(value){
